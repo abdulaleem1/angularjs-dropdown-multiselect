@@ -457,7 +457,7 @@
 				}
 			} else if (!exists && ($scope.settings.selectionLimit === 0 || $scope.selectedModel.length < $scope.settings.selectionLimit)) {
 
-				if(!$scope.cntrlKeyDown){
+				if($scope.settings.multiSelectWithCtrl && !$scope.cntrlKeyDown){
 					$scope.selectedModel.length = 0;
 				}
 
