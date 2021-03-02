@@ -435,7 +435,7 @@
 			$scope.selectedGroup = null;
 		}
 
-		function setSelectedItem(option) {
+		function setSelectedItem(option,fromSelectAll) {
 			var dontRemove = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 			var fireSelectionChange = arguments[2];
 
@@ -457,7 +457,7 @@
 				}
 			} else if (!exists && ($scope.settings.selectionLimit === 0 || $scope.selectedModel.length < $scope.settings.selectionLimit)) {
 
-				if($scope.settings.multiSelectWithCtrl && !$scope.cntrlKeyDown){
+				if($scope.settings.multiSelectWithCtrl && !$scope.cntrlKeyDown && !fromSelectAll){
 					$scope.selectedModel.length = 0;
 				}
 
